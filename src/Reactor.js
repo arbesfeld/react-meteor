@@ -1,4 +1,4 @@
-var ReactMeteorMixin = {
+var Reactor = {
   _handleMeteorChange: function() {
     this.setState(this.getMeteorState());
   },
@@ -29,15 +29,15 @@ var ReactMeteorMixin = {
 // So you don't have to mix in ReactMeteor.Mixin explicitly.
 function createClass(spec) {
   spec.mixins = spec.mixins || [];
-  spec.mixins.push(ReactMeteorMixin);
+  spec.mixins.push(Reactor);
   return React.createClass(spec);
 }
 
 if (typeof exports === "object") {
-  ReactMeteor = exports;
+  Reactor = exports;
 } else {
-  ReactMeteor = {};
+  Reactor = {};
 }
 
-ReactMeteor.Mixin = ReactMeteorMixin;
-ReactMeteor.createClass = createClass;
+Reactor.Mixin = Reactor;
+Reactor.createClass = createClass;
